@@ -295,6 +295,8 @@ type Reader struct {
 	prealloc fstStateV1
 }
 
+func (r *Reader) Reset(f *FST) { r.f = f }
+
 func (r *Reader) Get(input []byte) (uint64, bool, error) {
 	return r.f.get(input, &r.prealloc)
 }
