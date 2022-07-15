@@ -297,7 +297,7 @@ func (i *FSTIterator) Seek(key []byte) error {
 
 // Close will free any resources held by this iterator.
 func (i *FSTIterator) Close() error {
-	// at the moment we don't do anything,
-	// but wanted this for API completeness
+	// Clear fields.
+	*i = FSTIterator{}
 	return nil
 }
